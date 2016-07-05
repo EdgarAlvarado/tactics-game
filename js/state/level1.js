@@ -11,7 +11,7 @@ app.level1.create = function(){
   app.game.scale.pageAlignHorizontally = true;
   app.game.scale.pageAlignVertically = true;
   app.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-  var tintColor = app.bgColors[app.game.rnd.between(0, app.bgColors.length - 1)];
+  var tintColor = app.load.bgColors[app.game.rnd.between(0, app.load.bgColors.length - 1)];
   app.game.stage.backgroundColor = tintColor;
   this.leftSquare = app.game.add.sprite(0, app.game.height, "base");
   this.leftSquare.anchor.set(1, 1);
@@ -34,8 +34,8 @@ app.level1.update = function(){
 }
 
 app.level1.updateLevel = function() {
-    var holeWidth = app.game.rnd.between(app.holeWidthRange[0], app.holeWidthRange[1]);
-    var wallWidth = app.game.rnd.between(app.wallRange[0], app.wallRange[1]);
+    var holeWidth = app.game.rnd.between(app.load.holeWidthRange[0], app.load.holeWidthRange[1]);
+    var wallWidth = app.game.rnd.between(app.load.wallRange[0], app.load.wallRange[1]);
     var leftSquareTween = app.game.add.tween(this.leftSquare).to({
          x: (app.game.width - holeWidth) / 2
     }, 500, Phaser.Easing.Cubic.Out, true);
