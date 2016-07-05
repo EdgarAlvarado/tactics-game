@@ -91,11 +91,11 @@ app.level1.stop = function(){
     app.game.time.events.add(Phaser.Timer.SECOND * 2, function(){
         if(this.square.successful == app.load.level){
              app.load.level++;
-             app.game.state.start("PlayGame");
+             app.game.state.start("level1");
              return;
         }
         if(message){
-             app.game.state.start("PlayGame");
+             app.game.state.start("level1");
              return;
         }
         this.updateLevel();
