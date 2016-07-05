@@ -29,7 +29,7 @@ Player.prototype.sub_update = function(){
   if(app.game.input.activePointer.x <= 640){
     this.surface.tint = 0xff0000;
   } else {
-    this.surface.tint = 0x0000ff;
+    this.surface.tint = 0x00ff00;
   }
 
 }
