@@ -28,7 +28,7 @@ app.level1.create = function(){
     this.squareText.anchor.set(0.5);
     this.squareText.tint = tintColor;
     this.square.addChild(this.squareText);
-    this.levelText = app.game.add.bitmapText(app.game.width / 2, 0, "font", "Level " + app.load.level, 60);
+    this.levelText = app.game.add.bitmapText(app.game.width / 2, 0, "font", "Level " + app.load.level + "\tRecord " + app.load.maxlevel, 60);
     this.levelText.anchor.set(0.5, 0);
     this.square.scale.setTo(0.2, 0.2);
     this.updateLevel();
@@ -91,10 +91,13 @@ app.level1.stop = function(){
     app.game.time.events.add(Phaser.Timer.SECOND * 2, function(){
         if(this.square.successful == app.load.level){
              app.load.level++;
+             if(app.load.level > app.load.maxlevel)
+                app.load.maxlevel = app.load.level;
              app.game.state.start("level1");
              return;
         }
         if(message){
+            app.load.level = 1;
              app.game.state.start("level1");
              return;
         }

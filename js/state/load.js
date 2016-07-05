@@ -13,6 +13,7 @@ app.load.preload = function(){
     this.holeWidthRange = [40, 280];
     this.wallRange = [10, 70];
     this.level = 1;
+    this.maxlevel = 0;
 }
 
 app.load.create = function(){
