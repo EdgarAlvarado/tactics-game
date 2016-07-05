@@ -90,9 +90,9 @@ app.level1.stop = function(){
     }, this);
     app.game.time.events.add(Phaser.Timer.SECOND * 2, function(){
         if(this.square.successful == app.load.level){
-             app.load.level++;
              if(app.load.level > app.load.maxlevel)
                 app.load.maxlevel = app.load.level;
+             app.load.level++;
              app.game.state.start("level1");
              return;
         }
