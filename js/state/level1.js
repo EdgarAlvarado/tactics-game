@@ -23,7 +23,7 @@ app.level1.create = function(){
     this.rightWall.anchor.set(0, 1);
     this.square = app.game.add.sprite(app.game.width / 2, - 400, "square");
     this.square.anchor.set(0.5);
-    this.square.scale.setTo(0.2, 0.2);
+    this.square.successful = 0;
     this.squareText = app.game.add.bitmapText(0, 0, "font", (app.load.level - this.square.successful).toString(), 120);
     this.squareText.anchor.set(0.5);
     this.squareText.tint = tintColor;
@@ -41,6 +41,7 @@ app.level1.update = function(){
 }
 
 app.level1.updateLevel = function() {
+    this.squareText.text = (app.load.level - this.square.successful).toString();
     var holeWidth = app.game.rnd.between(app.load.holeWidthRange[0], app.load.holeWidthRange[1]);
     var wallWidth = app.game.rnd.between(app.load.wallRange[0], app.load.wallRange[1]);
     var leftSquareTween = app.game.add.tween(this.leftSquare).to({
