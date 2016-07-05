@@ -24,11 +24,11 @@ app.level1.create = function(){
     this.square = app.game.add.sprite(app.game.width / 2, - 400, "square");
     this.square.anchor.set(0.5);
     this.square.scale.setTo(0.2, 0.2);
-    this.squareText = app.game.add.bitmapText(0, 0, "font", (level - this.square.successful).toString(), 120);
+    this.squareText = app.game.add.bitmapText(0, 0, "font", (app.load.level - this.square.successful).toString(), 120);
     this.squareText.anchor.set(0.5);
     this.squareText.tint = tintColor;
     this.square.addChild(this.squareText);
-    this.levelText = app.game.add.bitmapText(app.game.width / 2, 0, "font", "Level " + level, 60);
+    this.levelText = app.game.add.bitmapText(app.game.width / 2, 0, "font", "Level " + app.load.level, 60);
     this.levelText.anchor.set(0.5, 0);
     this.square.scale.setTo(0.2, 0.2);
     this.updateLevel();
@@ -88,8 +88,8 @@ app.level1.stop = function(){
          }
     }, this);
     app.game.time.events.add(Phaser.Timer.SECOND * 2, function(){
-        if(this.square.successful == level){
-             level++;
+        if(this.square.successful == app.load.level){
+             app.load.level++;
              game.state.start("PlayGame");
              return;
         }
@@ -124,6 +124,6 @@ app.level1.stop = function(){
         }
         game.add.tween(this.square).to({
              y: destY
-        }, 600, Phaser.Easing.Bounce.Out, true);   
+        }, 600, Phaser.Easing.Bounce.Out, true);
     }
 }
