@@ -33,7 +33,7 @@ gulp.task('scripts', ['clean'], function() {
       .pipe(uglify())
       .pipe(concat('all.min.js'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('js'));
 });
 
 // Rerun the task when a file changes
