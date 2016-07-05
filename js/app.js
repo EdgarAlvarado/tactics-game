@@ -1,4 +1,4 @@
 var app = {
 	program_name: "Tactics",
-	game: new Phaser.Game(1280, 720, Phaser.AUTO, 'play_area')
+	game: new Phaser.Game(window.screen.width, window.screen.height, Phaser.AUTO, 'play_area')
 }
