@@ -7,6 +7,8 @@ app.load.preload = function(){
     app.game.load.image("base", "assets/gfx/base.png");
     app.game.load.image("square", "assets/gfx/square.png");
     app.game.load.image("top", "assets/gfx/top.png");
+    game.load.bitmapFont("font", "assets/fonts/font.png", "assets/fonts/font.fnt");
+
     this.bgColors = [0x62bd18, 0xff5300, 0xd21034, 0xff475c, 0x8f16b2, 0x588c7e, 0x8c4646];
     this.holeWidthRange = [40, 280];
     this.wallRange = [10, 70];
