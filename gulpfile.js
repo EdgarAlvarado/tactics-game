@@ -13,7 +13,7 @@ var git = require('gulp-git');
 var fs = require('fs');
 
 var paths = {
-  scripts: ['js/**/*.js'],
+  scripts: ['dev/**/*.js'],
   images: 'client/img/**/*'
 };
 
