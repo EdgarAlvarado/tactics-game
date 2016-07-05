@@ -65,7 +65,7 @@ app.level1.updateLevel = function() {
             angle: 40
         }, 300, Phaser.Easing.Linear.None, true, 0, -1, true)
     }, this);
-    var growTween = game.add.tween(this.square.scale).to({
+    var growTween = app.game.add.tween(this.square.scale).to({
          x: 0.2,
          y: 0.2
     }, 500, Phaser.Easing.Linear.None, true);
@@ -90,11 +90,11 @@ app.level1.stop = function(){
     app.game.time.events.add(Phaser.Timer.SECOND * 2, function(){
         if(this.square.successful == app.load.level){
              app.load.level++;
-             game.state.start("PlayGame");
+             app.game.state.start("PlayGame");
              return;
         }
         if(message){
-             game.state.start("PlayGame");
+             app.game.state.start("PlayGame");
              return;
         }
         this.updateLevel();
@@ -115,14 +115,14 @@ app.level1.stop = function(){
     }
     else{
         if(this.square.width <= this.rightWall.x - this.leftWall.x){
-             var destY = game.height - this.leftSquare.height - this.square.height / 2;
+             var destY = app.game.height - this.leftSquare.height - this.square.height / 2;
              this.square.successful ++;
         }
         else{
-             var destY = game.height - this.leftSquare.height - this.leftWall.height - this.square.height / 2;
+             var destY = app.game.height - this.leftSquare.height - this.leftWall.height - this.square.height / 2;
              message = "Oh no!!";
         }
-        game.add.tween(this.square).to({
+        app.game.add.tween(this.square).to({
              y: destY
         }, 600, Phaser.Easing.Bounce.Out, true);
     }
