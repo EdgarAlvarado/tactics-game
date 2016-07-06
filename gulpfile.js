@@ -13,7 +13,7 @@ var git = require('gulp-git');
 var fs = require('fs');
 
 var paths = {
-  scripts: ['dev/lib/phaser.js', 'dev/*.js', 'dev/actor/*.js', 'dev/state/*.js'],
+  scripts: ['dev/lib/phaser.js', 'dev/actor/*.js', 'dev/state/*.js', 'dev/*.js'],
   images: 'client/img/**/*'
 };
 
